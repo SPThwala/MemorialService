@@ -72,9 +72,11 @@
             border-radius: 5px;
         }
         .gallery img {
-            width: 100%;
-            margin-bottom: 10px;
+            width: 100%; /* Keeps responsive design */
+            height: 300px; /* Ensures uniform height */
+            object-fit: cover; /* Crops image while maintaining aspect ratio */
             border-radius: 8px;
+            margin-bottom: 10px;
         }
         .gallery {
             display: grid;
@@ -103,13 +105,13 @@
         </section>
         
         <section class="photo-section">
-            <img src="grandma.jpg" alt="Photo of Grandma">
+            <img src="grandma.jpg" alt="Photo of Grandma" width="700" height="200">
         </section>
         
         <hr>
 
         <!-- Obituary Section -->
-        <div class="section" id="obituary-section">
+        <div class="section" id="obituary-section" style="text-align: center;">
             <button class="toggle-button" onclick="toggleSection('obituary')">View Obituary</button>
             <div class="hidden" id="obituary">
                 <h2>Obituary</h2>
@@ -120,7 +122,7 @@
         <hr>
 
         <!-- Service Details Section -->
-        <div class="section" id="service-details-section">
+        <div class="section" id="service-details-section" style="text-align: center;">
             <button class="toggle-button" onclick="toggleSection('service-details')">View Service Details</button>
             <div class="hidden" id="service-details">
                 <h2>Service Details</h2>
@@ -135,11 +137,21 @@
         
         <hr>
 
-        <section class="gallery-section">
+        <section class="gallery-section" style="text-align: center;">
             <h2>Photo Gallery</h2>
             <div class="gallery">
+                <img src="Photo8.jpg" alt="Grandma Photo 8">
                 <img src="Photo1.jpg" alt="Grandma Photo 1">
                 <img src="Photo2.jpg" alt="Grandma Photo 2">
+                <img src="Photo11.jpg" alt="Grandma Photo 11">
+                <img src="Photo4.jpg" alt="Grandma Photo 4">
+                <img src="Photo5.jpg" alt="Grandma Photo 5">
+                <img src="Photo6.jpg" alt="Grandma Photo 6">
+                <img src="Photo7.jpg" alt="Grandma Photo 7">
+                <img src="Photo9.jpg" alt="Grandma Photo 9">
+                <img src="Photo10.jpg" alt="Grandma Photo 10">
+                <!--<img src="Photo12.jpg" alt="Grandma Photo 12">-->
+                <img src="Photo13.jpg" alt="Grandma Photo 13">
                 <img src="Photo3.jpg" alt="Grandma Photo 3">
             </div>
         </section>
@@ -147,7 +159,7 @@
         <hr>
 
         <!-- Memory Wall Section -->
-        <div class="section" id="memory-wall">
+        <div class="section" id="memory-wall" style="text-align: center;">
             <h2>Memory Wall</h2>
             <textarea id="memoryInput" placeholder="Share a memory"></textarea>
             <button class="toggle-button" onclick="addMemory()">Share Memory</button>
