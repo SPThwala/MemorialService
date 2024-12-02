@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Memory of [Your Grandmother's Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .toggle-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        .service-details {
+            background: #eaf4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>In Loving Memory of Phelwazana Beauty Taleni <br> <h2>(20 November 1958 - 28 November 2024)</h2></h1>
+
+        <section class="tribute-section">
+            <h2>A Tribute to Her Life</h2>
+            <p>
+                Phelwazana Beauty Taleni was a remarkable person who touched the lives of everyone she met. 
+                Her kindness, wisdom, and love for her family will always be remembered. 
+                She was a source of strength and inspiration, and her legacy lives on in all of us.
+            </p>
+        </section>
+        
+        <section class="photo-section" style="text-align: center;">
+            <img src="grandma.jpg" alt="Photo of Grandma" class="oval-image" width="500" height="500"  >
+        </section>
+        
+        <hr style="border: 2px solid rgba(0, 0, 0, 0.3);">
+
+        <!-- Obituary Section -->
+        <div class="section" id="obituary-section" style="text-align: center;">
+            <button class="toggle-button" onclick="toggleSection('obituary')">View Obituary</button>
+            <div class="hidden" id="obituary">
+                <h2>Obituary</h2>
+                <p>[Your grandmother's obituary goes here. Include details about her life, accomplishments, family, and legacy.]</p>
+            </div>
+        </div>
+        
+        <hr style="border: 2px solid rgba(0, 0, 0, 0.3);">
+
+        <!-- Service Details Section -->
+        <div class="section" id="service-details-section" style="text-align: center;">
+            <button class="toggle-button" onclick="toggleSection('service-details')">View Service Details</button>
+            <div class="hidden" id="service-details">
+                <h2>Service Details</h2>
+                <div class="service-details">
+                    <p><strong>Date:</strong> [Enter the date]</p>
+                    <p><strong>Time:</strong> [Enter the time]</p>
+                    <p><strong>Location:</strong> [Enter the location]</p>
+                    <p><strong>Additional Details:</strong> [Any specific instructions, like dress code or reception information.]</p>
+                </div>
+            </div>
+        </div>
+        
+        <hr style="border: 2px solid rgba(0, 0, 0, 0.3);">
+
+        <section class="gallery-section">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <img src="photo1.jpg" alt="Grandma Photo 1" width="200" height="200">
+                <img src="photo2.jpg" alt="Grandma Photo 2" width="200" height="200">
+                <img src="photo3.jpg" alt="Grandma Photo 3" width="200" height="200">
+            </div>
+        </section>
+
+        <hr style="border: 2px solid rgba(0, 0, 0, 0.3);">
+
+        <!-- Memory Wall Section -->
+        <div class="section" id="memory-wall">
+            <h2>Memory Wall</h2>
+            <textarea id="memoryInput" placeholder="Share a memory" style="width: 100%; height: 100px;"></textarea>
+            <button onclick="addMemory()">Share Memory</button>
+            <ul id="memoryList"></ul>
+        </div>
+    </div>
+    <script>
+        // Toggle visibility of sections
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        }
+
+        // Add a memory to the memory wall
+        function addMemory() {
+            const input = document.getElementById('memoryInput').value;
+            if (input.trim() !== "") {
+                const list = document.getElementById('memoryList');
+                const listItem = document.createElement('li');
+                listItem.textContent = input;
+                list.appendChild(listItem);
+                document.getElementById('memoryInput').value = ""; // Clear the input
+            }
+        }
+    </script>
+</body>
+</html>
